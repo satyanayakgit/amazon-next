@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import logo from "../../images/logo.png"
+import { SlLocationPin } from "react-icons/sl"
 
 
 const Header = () => { 
@@ -11,6 +12,10 @@ const Header = () => {
              </div>
              
              {/* delivery */}
+             <div>
+                <p>Deliver to</p>
+                <p>Bangalore</p>
+             </div>
              {/* search bar */}
              {/* signin */}
              {/* favourite */}
