@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import logo from "../../images/logo.png"
 import { SlLocationPin } from "react-icons/sl"
+import { HiOutlineSearch } from "react-icons/hi"
 
 
 const Header = () => { 
@@ -12,14 +13,29 @@ const Header = () => {
              </div>
              
              {/* delivery */}
-             <div>
-                <p>Deliver to</p>
-                <p>Bangalore</p>
+             <div className="px-2 border border-transparent hover:border-white cursor-pointer duration-300 items-center justify-center h-[70%] hidden xl:inline-flex gap-1">
+                <SlLocationPin />
+                <div className="text-xs">
+                    <p>Deliver to</p>
+                    <p className="text-white font-bold">Bangalore</p>
+                </div>
              </div>
              {/* search bar */}
+             <div className="flex-1 h-10 hidden md:inline-flex items-center justify-between relative">
+                <input 
+                    className="w-full h-full rounded-md px-2 placeholder:text-sm text-base text-black border-[3px] border-transparent outline-none focus-visible:border-amazon_yellow"
+                    type="text"
+                    placeholder='Search amazon-next products'
+                />
+                <span>
+                    <HiOutlineSearch />
+                </span>
+             </div>
              {/* signin */}
              {/* favourite */}
              {/* cart */}
+             
+
         </div>
     </div>;
 };
