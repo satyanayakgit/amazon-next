@@ -63,8 +63,27 @@ export const nextSlice = createSlice({
     resetCart: (state) => {
       state.productData = [];
     },
+    addUser: (state, action) => {
+      state.userInfo = action.payload;
+    },
+    removeUser: (state) => {
+      state.userInfo = null;
+    },
+    setAllProducts: (state, action) => {
+      state.allProducts = action.payload;
+    },
   },
 });
 
-export const { addToCart } = nextSlice.actions;
+export const {
+  addToCart,
+  addToFavorite,
+  increaseQuantity,
+  decreaseQuantity,
+  deleteProduct,
+  resetCart,
+  addUser,
+  removeUser,
+  setAllProducts,
+} = nextSlice.actions;
 export default nextSlice.reducer;
