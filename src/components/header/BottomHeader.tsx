@@ -6,10 +6,10 @@ const BottomHeader = () => {
     <div className="w-full h-10 bg-amazon_light text-white text-sm px-4 flex items-center">
       <p className="flex items-center gap-1 h-8 px-2 border border-transparent hover:border-white cursor-pointer duration-300">
         <LuMenu className="text-xl" />
-        All
+        AllPs
       </p>
       <p className="hidden md:inline-flex items-center h-8 px-2 border border-transparent hover:border-white cursor-pointer duration-300">
-        Todays Deals
+        Today Deals
       </p>
       <p className="hidden md:inline-flex items-center h-8 px-2 border border-transparent hover:border-white cursor-pointer duration-300">
         Customer Service
