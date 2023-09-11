@@ -1,11 +1,11 @@
-import Image from "next/image";
-import React from "react";
-import { ProductProps } from "../../type";
-import { FaHeart } from "react-icons/fa";
-import { HiShoppingCart } from "react-icons/hi";
-import FormattedPrice from "./FormattedPrice";
-import { useDispatch } from "react-redux";
-import { addToCart } from "@/store/nextSlice";
+import Image from 'next/image';
+import React from 'react';
+import { ProductProps } from '../../type';
+import { FaHeart } from 'react-icons/fa';
+import { HiShoppingCart } from 'react-icons/hi';
+import FormattedPrice from './FormattedPrice';
+import { useDispatch } from 'react-redux';
+import { addToCart, addToFavorite } from '@/store/nextSlice';
 
 const Products = ({ productData }: any) => {
   const dispatch = useDispatch();
@@ -57,7 +57,25 @@ const Products = ({ productData }: any) => {
                 >
                   <HiShoppingCart />
                 </span>
-                <span className="w-full h-full border-b-[1px] border-b-gray-400 flex items-center justify-center text-xl bg-transparent hover:bg-amazon_yellow cursor-pointer duration-300">
+                <span
+                  onClick={() =>
+                    dispatch(
+                      addToFavorite({
+                        _id: _id,
+                        brand: brand,
+                        category: category,
+                        image: image,
+                        description: description,
+                        isNew: isNew,
+                        oldPrice: oldPrice,
+                        price: price,
+                        title: title,
+                        quantity: 1,
+                      })
+                    )
+                  }
+                  className="w-full h-full border-b-[1px] border-b-gray-400 flex items-center justify-center text-xl bg-transparent hover:bg-amazon_yellow cursor-pointer duration-300"
+                >
                   <FaHeart />
                 </span>
               </div>
